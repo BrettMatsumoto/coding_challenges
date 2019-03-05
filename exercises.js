@@ -24,11 +24,20 @@ function sumUp(num){
     }
     return sum
 }
-console.log(ranNum2);
-console.log(sumUp(ranNum2));
+// console.log(ranNum2);
+// console.log(sumUp(ranNum2));
 
 // Function - LetterCapitalize(str)
 // The function will take the str parameter being passed and capitalize the first letter of each word.  Words will be separated by only one space.
+
+function capIt(str){
+    strSplit = str.split(' ');
+    for (i=0;i<strSplit.length;i++){
+        strSplit[i] = strSplit[i].charAt(0).toUpperCase() + strSplit[i].substring(1);
+    }
+    return strSplit.join(' ');
+}
+console.log(capIt('this is a string'));
 
 // Function rangeRover(arr)
 // The function will take an array of two numbers and return the sum of those two numbers AND all numbers between them.  The lowest number will not always come first.  For example rangeRover([1, 4]) should return 10, i.e.(1 + 2 + 3 + 4), rangeRover([4, 1]) should also return 10.
