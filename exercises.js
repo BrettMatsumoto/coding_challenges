@@ -56,7 +56,7 @@ function capIt(str){
 // Function missingLetter(str)
 // The function will find the missing letter passed in the parameter and return it.  If all letters are present in the string, the return will be undefined.  For example missingLetter("abce") should return "d", missingLetter("bcd") should return undefined.
 
-function findMissing(str) {
+function findMissing(str){
     var start = 0;
     var end = 122;
     if (str) {
@@ -70,11 +70,29 @@ function findMissing(str) {
     }
     return undefined;
 }
-console.log(findMissing('abce'))
-console.log(findMissing('bcd'))
+// console.log(findMissing('abce'))
+// console.log(findMissing('bcd'))
 
 // Function hailCaesar(num)
 // The function will take the num parameter and convert the given number into a roman numeral.  For example hailCaesar(2) should return "II", hailCaesar(5) should return "V".
+
+function hailCaesar(num){
+    if (typeof num !== 'number')
+    return NaN;
+
+    var digits = String(+num).split('')
+    var key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+    "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+    "","I","II","III","IV","V","VI","VII","VIII","IX"]
+    var romanNum = '';
+    var i = 3;
+    while (i--)
+    romanNum = (key[+digits.pop() + (i*10)] || "") + romanNum;
+    return Array(+digits.join('')+1).join('M') + romanNum;
+}
+console.log(hailCaesar(3));
+console.log(hailCaesar(16));
+console.log(hailCaesar('zebra'));
 
 // Function spinalTap(str)
 // The function will convert a string to spinal case.  Spinal case is all-lowercase-words-joined-by-dashes.  For example spinalTap("I own this Taco Stand!") should return "i-own-this-taco-stand!".
