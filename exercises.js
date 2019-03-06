@@ -1,16 +1,16 @@
 // Function -  FirstFactorial(num)
 // The function will take the num parameter being passed and return the factorial of it (ie. if num =3, return(3 * 2 * 1)).  For test cases, the range will be between 1 and 18.
 
-var ranNum = Math.floor(Math.random()*18);
+var ranNum = Math.floor(Math.random()*19);
 
-function firstFactorial(num){
-    var factorial = [];
-    for (i=1;i<=num;i++){
-        factorial.push(i)
+function factorial(num){
+    if (num === 0) {
+        return 1;
+    } else {
+        return num * factorial(num-1)
     }
-    return factorial    
 }
-// console.log(firstFactorial(ranNum));
+console.log(factorial(ranNum));
 
 // Function - SimpleAdding(num)
 // The function will take the num parameter and add up all the numbers from 1 to num.  For test cases, the parameter num will be any number from 1 to 1000.
@@ -41,6 +41,13 @@ function capIt(str){
 
 // Function rangeRover(arr)
 // The function will take an array of two numbers and return the sum of those two numbers AND all numbers between them.  The lowest number will not always come first.  For example rangeRover([1, 4]) should return 10, i.e.(1 + 2 + 3 + 4), rangeRover([4, 1]) should also return 10.
+
+var rangeRover = [4,1];
+
+function sortIt(){
+    rangeRover.sort(function(a,b){return a-b});
+}
+console.log(sortIt(rangeRover))
 
 // Function missingLetter(str)
 // The function will find the missing letter passed in the parameter and return it.  If all letters are present in the string, the return will be undefined.  For example missingLetter("abce") should return "d", missingLetter("bcd") should return undefined.
