@@ -90,12 +90,18 @@ function hailCaesar(num){
     romanNum = (key[+digits.pop() + (i*10)] || "") + romanNum;
     return Array(+digits.join('')+1).join('M') + romanNum;
 }
-console.log(hailCaesar(3));
-console.log(hailCaesar(16));
-console.log(hailCaesar('zebra'));
+// console.log(hailCaesar(3));
+// console.log(hailCaesar(16));
+// console.log(hailCaesar('zebra'));
 
 // Function spinalTap(str)
 // The function will convert a string to spinal case.  Spinal case is all-lowercase-words-joined-by-dashes.  For example spinalTap("I own this Taco Stand!") should return "i-own-this-taco-stand!".
+
+function spinalTap(str){
+    var regex = / /gi;
+    return str.replace(regex, '-')
+}
+console.log(spinalTap('I own this Taco Stand!'));
 
 // Function sumFibs(num)
 // The function will return the sum of all ODD Fibonacci numbers up to and including the passed number if it's a Fibonacci number.  The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, where the next number is found by adding up the two numbers before it.  For example subFibs(4) should return 5, sumbFibs(1000) should return 1785.
