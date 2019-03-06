@@ -24,9 +24,9 @@ function sumUp(num){
     }
     return sum
 }
-console.log(ranNum2);
-console.log(sumUp(4));
-console.log(sumUp(ranNum2));
+// console.log(ranNum2);
+// console.log(sumUp(4));
+// console.log(sumUp(ranNum2));
 
 // Function - LetterCapitalize(str)
 // The function will take the str parameter being passed and capitalize the first letter of each word.  Words will be separated by only one space.
@@ -43,15 +43,35 @@ function capIt(str){
 // Function rangeRover(arr)
 // The function will take an array of two numbers and return the sum of those two numbers AND all numbers between them.  The lowest number will not always come first.  For example rangeRover([1, 4]) should return 10, i.e.(1 + 2 + 3 + 4), rangeRover([4, 1]) should also return 10.
 
-var rangeRover = [4,1];
-
-function sortIt(){
-    rangeRover.sort(function(a,b){return a-b});
-}
-console.log(sortIt(rangeRover))
+// var rangeRover = [4,1];
+// var sum = 0;
+// function sortIt(){
+//     a = rangeRover[0];
+//     b = rangeRover[1];
+    
+    
+// }
+// console.log(sortIt(rangeRover));
 
 // Function missingLetter(str)
 // The function will find the missing letter passed in the parameter and return it.  If all letters are present in the string, the return will be undefined.  For example missingLetter("abce") should return "d", missingLetter("bcd") should return undefined.
+
+function findMissing(str) {
+    var start = 0;
+    var end = 122;
+    if (str) {
+        i = str.charCodeAt(0);
+        while (i <= end && start < str.length) {
+            if (String.fromCharCode(i) !== str.charAt(start)) {
+                return String.fromCharCode(i);
+            }
+            i++; start++;
+        }
+    }
+    return undefined;
+}
+console.log(findMissing('abce'))
+console.log(findMissing('bcd'))
 
 // Function hailCaesar(num)
 // The function will take the num parameter and convert the given number into a roman numeral.  For example hailCaesar(2) should return "II", hailCaesar(5) should return "V".
