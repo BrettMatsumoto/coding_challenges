@@ -101,7 +101,25 @@ function spinalTap(str){
     var regex = / /gi;
     return str.replace(regex, '-')
 }
-console.log(spinalTap('I own this Taco Stand!'));
+// console.log(spinalTap('I own this Taco Stand!'));
 
 // Function sumFibs(num)
 // The function will return the sum of all ODD Fibonacci numbers up to and including the passed number if it's a Fibonacci number.  The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, where the next number is found by adding up the two numbers before it.  For example subFibs(4) should return 5, sumbFibs(1000) should return 1785.
+
+function sumFibs(num){
+    var a = 0;
+    var b = 1;
+    var fib = 1;
+    var sum = 0;
+    while (fib <=num){
+        if (fib%2 === 1){
+            sum += fib;
+        }
+        fib = a+b;
+        a = b;
+        b = fib;
+    }
+    return sum;
+}
+console.log(sumFibs(4));
+console.log(sumFibs(1000));
