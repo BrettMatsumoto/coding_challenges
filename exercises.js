@@ -43,15 +43,23 @@ function capIt(str){
 // Function rangeRover(arr)
 // The function will take an array of two numbers and return the sum of those two numbers AND all numbers between them.  The lowest number will not always come first.  For example rangeRover([1, 4]) should return 10, i.e.(1 + 2 + 3 + 4), rangeRover([4, 1]) should also return 10.
 
-// var rangeRover = [4,1];
-// var sum = 0;
-// function sortIt(){
-//     a = rangeRover[0];
-//     b = rangeRover[1];
-    
-    
-// }
-// console.log(sortIt(rangeRover));
+function rangeRover(arr){
+    var a = arr[0];
+    var b = arr[1];
+    var reorganized = [];
+    var sum = 0;
+    if (a < b){
+        reorganized.push(a);
+        reorganized.push(b);
+    } else {
+        reorganized.push(b);
+        reorganized.push(a);
+    }
+    for (i = reorganized[0]; i <= reorganized[1]; i++){
+        sum += i;
+    } return sum
+}
+console.log(rangeRover([5,2]));
 
 // Function missingLetter(str)
 // The function will find the missing letter passed in the parameter and return it.  If all letters are present in the string, the return will be undefined.  For example missingLetter("abce") should return "d", missingLetter("bcd") should return undefined.
@@ -121,5 +129,5 @@ function sumFibs(num){
     }
     return sum;
 }
-console.log(sumFibs(4));
-console.log(sumFibs(1000));
+// console.log(sumFibs(4));
+// console.log(sumFibs(1000));
