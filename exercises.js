@@ -10,7 +10,7 @@ function factorial(num){
         return num * factorial(num-1)
     }
 }
-console.log(factorial(ranNum));
+// console.log(factorial(ranNum));
 
 // Function - SimpleAdding(num)
 // The function will take the num parameter and add up all the numbers from 1 to num.  For test cases, the parameter num will be any number from 1 to 1000.
@@ -24,8 +24,9 @@ function sumUp(num){
     }
     return sum
 }
-// console.log(ranNum2);
-// console.log(sumUp(ranNum2));
+console.log(ranNum2);
+console.log(sumUp(4));
+console.log(sumUp(ranNum2));
 
 // Function - LetterCapitalize(str)
 // The function will take the str parameter being passed and capitalize the first letter of each word.  Words will be separated by only one space.
